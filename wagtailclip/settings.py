@@ -1,5 +1,7 @@
 from django.conf import settings
 
-DOWNLOAD_PATH = settings.get("WAGTAIL_CLIP_DOWNLOAD_PATH", "/clip")
-SEARCH_BACKEND_NAME = settings.get("WAGTAIL_CLIP_SEARCH_BACKEND_NAME", "clip")
-MAX_IMAGE_SEARCH_RESULTS = settings.get("WAGTAIL_CLIP_MAX_IMAGE_SEARCH_RESULTS", 256)
+DOWNLOAD_PATH = getattr(settings, "WAGTAIL_CLIP_DOWNLOAD_PATH") or "/clip"
+SEARCH_BACKEND_NAME = getattr(settings, "WAGTAIL_CLIP_SEARCH_BACKEND_NAME") or "clip"
+MAX_IMAGE_SEARCH_RESULTS = (
+    getattr(settings, "WAGTAIL_CLIP_MAX_IMAGE_SEARCH_RESULTS") or 256
+)
