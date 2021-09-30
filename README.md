@@ -8,7 +8,11 @@ git@github.com:MattSegal/wagtail-clip-example.git
 ## Installation
 
 ```bash
-pip install wagtailclip
+pip install \
+    wagtailclip@git+https://github.com/MattSegal/wagtail-clip.git \
+    -f https://download.pytorch.org/whl/torch_stable.html \
+    torch==1.7.1+cpu \
+    torchvision==0.8.2+cpu
 ```
 
 Settings
