@@ -7,6 +7,8 @@ git@github.com:MattSegal/wagtail-clip-example.git
 
 ## Installation
 
+You can install this repository as follows:
+
 ```bash
 pip install \
     wagtailclip@git+https://github.com/MattSegal/wagtail-clip.git \
@@ -14,6 +16,8 @@ pip install \
     torch==1.7.1+cpu \
     torchvision==0.8.2+cpu
 ```
+
+You will find that this installs ~200MB of deep learning libraries (PyTorch).
 
 Settings
 
@@ -36,6 +40,8 @@ WAGTAILSEARCH_BACKENDS = {
 }
 ```
 
+Yo
+
 ```bash
 ./manage.py download_clip
 ```
@@ -49,7 +55,7 @@ pros
 
 cons
 
-- torch dependency (~1.2GB of env (recheck))
+- torch dependency (~200MB of deep learning libraries)
 - CLIP dependency (~340MB of model parameters)
 
 ## How it works
