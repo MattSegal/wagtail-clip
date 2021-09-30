@@ -20,6 +20,10 @@ setup(
     license="MIT",
     install_requires=[
         "wagtail>=2",
+        "-f https://download.pytorch.org/whl/torch_stable.html",
+        "torch==1.7.1+cpu",
+        "torchvision==0.8.2+cpu",
+        "clip@git+https://github.com/openai/CLIP.git",
     ],
     # https://pypi.org/pypi?%3Aaction=list_classifiers
     classifiers=[
