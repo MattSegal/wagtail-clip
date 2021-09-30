@@ -2,10 +2,10 @@
 
 Wagtail CLIP allows you to search your Wagtail images using natural language queries.
 
-_video here_
+<iframe width="640" height="529" src="https://www.loom.com/embed/61b7bb81cd4f436b842a32befe7f0b35" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 This project was inspired by, and draws heavily from [memery](https://github.com/deepfates/memery), by [deepfates](https://github.com/deepfates) et al.
-It makes use of OpenAI's [CLIP model](https://github.com/openai/CLIP).
+It makes use of OpenAI's [CLIP model](https://github.com/openai/CLIP) (it was very nice of them to open source it, cheers).
 
 [An example project is available here](https://github.com/MattSegal/wagtail-clip-example)
 
@@ -55,15 +55,25 @@ That's enough to get started, however if you want pre-download the ~330MB of mod
 
 ## How it works
 
-This package uses the
-
-This packahe wraps the [CLIP model](https://github.com/openai/CLIP). which can be used for:
+This package wraps the [CLIP model](https://github.com/openai/CLIP). which can be used for:
 
 - encoding text into 1x512 float vectors
 - encoding images into 1x512 float vectors
 
-These vectors can be thought of as points in a 512 dimensional space, where the closer they are together, the more "related" they are.
-Importantly, CLIP encodes both text and images into the _same_ space, meaning
+These vectors can be thought of as points in a 512 dimensional space, where the closer two points are to each other, the more "related" they are.
+Importantly, CLIP encodes both text and images into the _same_ space, meaning that we can:
+
+- encode all Wagtail images into vectors and store them in the database
+- encode a user's search query text into a vector; and then
+- compare the search query vector with all the image vectors
+
+This comparison is done using a dot product to get a similarity score for each image. The operation is performed in Python.
+Once we have a similarity score we pick the top N (say, 256) most similar images and return those as the results.
+
+## Will this scale?
+
+Haha probably not. I've tested my naive implementation on up to 2048 images and it runs OK (~3s / query).
+There are specialized Postgres extensions and vector similarity databases that you can use if you want to do this for tens of thousands of images.
 
 ## Contributing
 
