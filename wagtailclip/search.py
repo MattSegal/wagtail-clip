@@ -2,12 +2,11 @@ import logging
 from time import time
 
 import torch
-from django.conf import settings
 from wagtail.search.backends.base import BaseSearchBackend
-
 
 from .models import NaturalSearchImage, ImageEmbedding
 from .encoder import encode_text
+from .settings import MAX_IMAGE_SEARCH_RESULTS
 
 logger = logging.getLogger(__name__)
 
@@ -29,9 +28,7 @@ class CLIPSearchBackend(BaseSearchBackend):
                 ie_qs = ImageEmbedding.objects.values_list("image_id", "embedding")
                 image_ids, embeddings = [[i for i, _ in ie_qs], [j for _, j in ie_qs]]
                 embeddings = torch.FloatTensor(embeddings)
-                max_search_results = min(
-                    len(image_ids), settings.CLIP_MAX_IMAGE_SEARCH_RESULTS
-                )
+                max_search_results = min(len(image_ids), MAX_IMAGE_SEARCH_RESULTS)
                 dot_product = torch.sum(query_vec * embeddings, dim=-1)
                 _, top_k_idxs = torch.topk(dot_product, k=max_search_results)
                 pk_list = [image_ids[idx] for idx in top_k_idxs]

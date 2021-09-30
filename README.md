@@ -5,12 +5,13 @@ Wagtail CLIP allows you to search your Wagtail images using natural language que
 _video here_
 
 This project was inspired by, and draws heavily from [memery](https://github.com/deepfates/memery), by [deepfates](https://github.com/deepfates) et al.
+It makes use of OpenAI's [CLIP model](https://github.com/openai/CLIP).
 
 [An example project is available here](https://github.com/MattSegal/wagtail-clip-example)
 
 ## Installation
 
-You can install this repository as follows:
+You can install this package as follows (requires Git):
 
 ```bash
 pip install \
@@ -54,8 +55,17 @@ That's enough to get started, however if you want pre-download the ~330MB of mod
 
 ## How it works
 
-pass
+This package uses the
+
+This packahe wraps the [CLIP model](https://github.com/openai/CLIP). which can be used for:
+
+- encoding text into 1x512 float vectors
+- encoding images into 1x512 float vectors
+
+These vectors can be thought of as points in a 512 dimensional space, where the closer they are together, the more "related" they are.
+Importantly, CLIP encodes both text and images into the _same_ space, meaning
 
 ## Contributing
 
 If you want to help out, make a pull request and/or email me at `mattdsegal@gmail.com` or DM me on [Twitter](https://twitter.com/mattdsegal).
+Probably better to talk to me first before writing a bunch of code.
