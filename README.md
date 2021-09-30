@@ -46,32 +46,16 @@ WAGTAILSEARCH_BACKENDS = {
 }
 ```
 
-That's enough to get started, however if you want pre-download the model parameters, you can run this management command:
+That's enough to get started, however if you want pre-download the ~330MB of model parameters, you can run this management command:
 
 ```bash
 ./manage.py download_clip
 ```
 
-## Tradeoffs
-
-pros
-
-- natural language image search
-- image similarity search
-
-cons
-
-- torch dependency (~200MB of deep learning libraries)
-- CLIP dependency (~340MB of model parameters)
-
 ## How it works
 
 pass
 
-## Example project
+## Contributing
 
-pass
-
-## Contributions
-
-pass
+If you want to help out, make a pull request and/or email me at `mattdsegal@gmail.com` or DM me on [Twitter](https://twitter.com/mattdsegal).
