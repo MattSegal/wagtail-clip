@@ -8,7 +8,7 @@ with open(path.join(here, "README.md")) as f:
 
 
 setup(
-    name="wagtail-clip",
+    name="wagtailclip",
     version=__version__,
     packages=find_packages(),
     include_package_data=True,

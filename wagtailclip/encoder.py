@@ -11,7 +11,7 @@ from .settings import DOWNLOAD_PATH
 def load_model():
     """
     Load CLIP model into memory.
-    Will download the model from the internet if it's not found in `WAGTAIL_MEMERY_CLIP_DOWNLOAD_PATH`.
+    Will download the model from the internet if it's not found in `WAGTAIL_CLIP_DOWNLOAD_PATH`.
     """
     device = torch.device("cpu")
     model, preprocess = clip.load("ViT-B/32", device, download_root=DOWNLOAD_PATH)

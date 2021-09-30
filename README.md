@@ -8,7 +8,7 @@ git@github.com:MattSegal/wagtail-clip-example.git
 ## Installation
 
 ```bash
-pip install wagtail-clip
+pip install wagtailclip
 ```
 
 Settings
