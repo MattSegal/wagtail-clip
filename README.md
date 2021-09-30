@@ -1,6 +1,10 @@
 # Wagtail CLIP
 
-https://github.com/deepfates/memery/tree/main/
+Wagtail CLIP allows you to search you Wagtail images using natural language queries.
+
+_video here_
+
+This project was inspired by, and draws heavily from [memery](https://github.com/deepfates/memery), by [deepfates](https://github.com/deepfates) et al.
 
 git@github.com:MattSegal/wagtail-clip.git
 git@github.com:MattSegal/wagtail-clip-example.git
