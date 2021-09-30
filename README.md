@@ -2,7 +2,7 @@
 
 Wagtail CLIP allows you to search your Wagtail images using natural language queries.
 
-<iframe width="640" height="529" src="https://www.loom.com/embed/61b7bb81cd4f436b842a32befe7f0b35" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+[![Intro Video](https://cdn.loom.com/sessions/thumbnails/61b7bb81cd4f436b842a32befe7f0b35-with-play.gif)](https://www.loom.com/share/61b7bb81cd4f436b842a32befe7f0b35)
 
 This project was inspired by, and draws heavily from [memery](https://github.com/deepfates/memery), by [deepfates](https://github.com/deepfates) et al.
 It makes use of OpenAI's [CLIP model](https://github.com/openai/CLIP) (it was very nice of them to open source it, cheers).
